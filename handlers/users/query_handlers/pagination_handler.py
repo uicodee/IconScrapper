@@ -11,7 +11,7 @@ async def pagination_handler(query: types.CallbackQuery, callback_data: dict, st
     data = []
     location = callback_data.get("location")
     page = int(callback_data.get("page"))
-    images = (await state.get_data()).get("images")
+    images = (await state.get_data()).get("icons")
     keyboard = types.InlineKeyboardMarkup(row_width=2)
     if location == "next":
         current_page = page + 1
