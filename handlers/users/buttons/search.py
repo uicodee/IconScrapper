@@ -7,7 +7,7 @@ from keyboards.inline import cancel
 from states import Search
 
 
-@dp.message_handler(Text(equals="Qidirish"))
+@dp.message_handler(Text(equals="Qidirish"), state="*")
 async def search(message: types.Message, state: FSMContext):
     await state.reset_state(with_data=True)
     await message.answer(
